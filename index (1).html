@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="google-site-verification" content="hntyB69jIQI4uzHn7aau2gG2mLWm4lzWaSurvXkzI60" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>نظم وقاك مع AI Moaz | منظم مذاكرة للطلاب</title>
+<meta name="description" content="نظم وقاك مع AI Moaz: برنامج مجاني لتنظيم المذاكرة للطلاب. جدول أسبوعي، تلخيص مذكرات بالرسم، بومودورو، بطاقات مراجعة ونقاط وإنجازات. Study planner for students.">
+<meta name="keywords" content="نظم وقاك, AI Moaz, aimoaz, جدول مذاكرة, تنظيم الوقت, طلاب, study planner">
+<link rel="canonical" href="https://aimoaz.netlify.app/">
+<meta property="og:type" content="website"><meta property="og:title" content="نظم وقاك مع AI Moaz"><meta property="og:description" content="برنامج مجاني لتنظيم المذاكرة للطلاب"><meta property="og:url" content="https://aimoaz.netlify.app/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"نظم وقاك مع AI Moaz","alternateName":"AI Moaz","url":"https://aimoaz.netlify.app/","applicationCategory":"EducationalApplication","inLanguage":["ar","en"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+
+<style>
+:root{--bg:#0b0b0d;--p:#16161a;--r:#e11d2e;--r2:#7a0f18;--t:#f4f4f5;--m:#9a9aa3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--t);font-family:Tahoma,Arial,sans-serif;overflow:hidden}
+button,input,select{font:inherit;color:inherit}
+button{background:var(--r);border:0;border-radius:20px;padding:9px 16px;cursor:pointer}
+button.g{background:var(--p);border:1px solid var(--r2)}
+input,select{background:#0e0e11;border:1px solid var(--r2);border-radius:14px;padding:9px 12px;width:100%}
+.hide{display:none!important}
+#app{display:flex;height:100%;direction:ltr}
+#side{overflow-y:auto;width:210px;background:var(--p);border-right:2px solid var(--r);padding:14px 10px;display:flex;flex-direction:column;gap:10px;direction:rtl;flex-shrink:0}
+#side h3{margin:0 0 6px;color:var(--r);font-size:15px}
+.nav{background:#101013;border:1px solid var(--r2);text-align:right;border-radius:18px}
+.nav.on{background:var(--r)}
+#main{flex:1;overflow:auto;direction:rtl;padding:16px}
+.card{background:var(--p);border:1px solid var(--r2);border-radius:22px;padding:14px;margin-bottom:12px}
+.bar{height:10px;background:#000;border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:var(--r)}
+#login,#gate{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg);z-index:50;padding:16px}
+.box{max-width:380px;width:100%;background:var(--p);border:2px solid var(--r);border-radius:30px;padding:22px;text-align:center}
+.box h2{color:var(--r);margin:0 0 10px}.box>*{margin-bottom:10px}
+/* bubbles */
+.bub{position:fixed;z-index:99;background:var(--r);color:#fff;padding:6px 14px;border-radius:50px;font-size:13px;pointer-events:none;animation:pop 1.1s ease-out forwards;white-space:nowrap}
+@keyframes pop{0%{transform:scale(.2);opacity:0}25%{transform:scale(1.15);opacity:1}100%{transform:translateY(-40px) scale(1);opacity:0}}
+#ov{position:fixed;inset:0;background:#000a;display:flex;align-items:center;justify-content:center;z-index:90;padding:16px}
+.dlg{max-width:340px;width:100%;background:var(--p);border:2px solid var(--r);border-radius:40px;padding:22px;text-align:center;animation:zoom .35s cubic-bezier(.3,1.6,.5,1)}
+.dlg>*{margin-bottom:10px}.dlg p{margin-top:0}
+@keyframes zoom{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}
+#wel{position:fixed;inset:0;z-index:95;pointer-events:none}
+.wb{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ff6070,var(--r2));animation:fly 2.6s ease-out forwards;display:flex;align-items:center;justify-content:center;font-size:12px;text-align:center;padding:6px}
+@keyframes fly{0%{transform:translate(0,0) scale(0)}30%{opacity:1}100%{transform:translate(var(--x),var(--y)) scale(1);opacity:0}}
+/* notes */
+#tools{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:8px}
+#tools button{padding:6px 11px}#tools button.on{outline:2px solid #fff}
+.sw{width:24px;height:24px;border-radius:50%;padding:0;border:2px solid #333}
+#cv{width:100%;height:68vh;background:#fff;border-radius:18px;touch-action:none;display:block}
+table{width:100%;border-collapse:collapse}td,th{border:1px solid var(--r2);padding:6px;text-align:center}
+#map{width:100%;max-width:520px;display:block;margin:auto}
+#map g{cursor:pointer}
+#tr{width:100%}
+@media(max-width:600px){#side{width:150px}}
+</style></head><body>
+
+<div id="login"><div class="box">
+<h2 id="l_t"></h2><p id="l_s" style="color:var(--m)"></p>
+<p style="color:var(--m);font-size:12px;line-height:1.7">نظم وقاك مع AI Moaz: جدول مذاكرة أسبوعي، تلخيص مذكرات، بومودورو، وبطاقات مراجعة للطلاب. Study planner for students.</p>
+<input id="ph" type="tel" inputmode="tel" placeholder="01XXXXXXXXX">
+<button id="send"></button>
+<div id="wait" class="hide"><p id="l_w"></p><button class="g" id="sim"></button></div>
+<small style="color:var(--m)" id="demo"></small>
+<button class="g" id="lg0" style="margin-top:8px"></button>
+</div></div>
+
+<div id="gate" class="hide"><div class="box" id="gbox"></div></div>
+<div id="wel"></div>
+
+<div id="app" class="hide">
+<div id="side"><h3 id="brand"></h3>
+<button class="nav" data-v="home"></button>
+<button class="nav" data-v="notes"></button>
+<button class="nav" data-v="sched"></button>
+<button class="nav" data-v="tr"></button>
+<button class="nav" data-v="pomo"></button><button class="nav" data-v="cards"></button><button class="nav" data-v="quiz"></button><button class="nav" data-v="ach"></button><button class="nav" data-v="priv"></button>
+<button class="g" id="lang"></button>
+<button class="g" id="out"></button>
+</div>
+<div id="main"></div></div>
+
+<script>
+const SUB=['ar','en','hi','sc','ma','ph'];
+const D={
+ar:{app:'نظم وقاك مع AI Moaz',lt:'تسجيل الدخول',ls:'ادخل رقم هاتفك فقط',snd:'إرسال طلب الدخول',lw:'تم إرسال إشعار على تيليجرام، اضغط "موافقة" هناك',sim:'محاكاة موافقة تيليجرام',
+demo:'نسخة تجريبية: الموافقة الحقيقية من تيليجرام تحتاج بوت وسيرفر',home:'الرئيسية',pomo:'بومودورو',cards:'بطاقات المراجعة',quiz:'اختبار سريع',ach:'إنجازاتي',priv:'الخصوصية',notes:'لخص مذكرتك',sched:'الجدول',tr:'الترجمة',lang:'English',out:'خروج',
+ar:'عربي',en:'إنجليزي',hi:'تاريخ',sc:'علوم',ma:'رياضيات',ph:'فلسفة',
+days:['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'],
+wel:['أهلاً بك!','نظم وقاك','AI Moaz','ذاكر بتركيز','ابدأ يومك'],
+gt:'أرسل سكرين شوت درجة الامتحان',gmin:'الحد الأدنى للدخول 85%',up:'اختيار الصورة',
+lock:'أعد الامتحان. متبقي',fail:'الدرجة أقل من 85%، أعد الامتحان وسيفتح البرنامج بعد ربع ساعة',
+na:'هذا الامتحان غير متوافر اليوم',ok:'تم قبول الدرجة، أهلاً بك',
+ask:'اكتب بيانات السكرين شوت (مؤقتاً حتى يتم ربط قراءة الصور)',subj:'المادة',grade:'الدرجة %',date:'التاريخ',go:'تأكيد',
+prog:'تقدمي',today:'اليوم',week:'الأسبوع',none:'لا توجد مادة اليوم',
+fin:'هل خلصت اللي عليك انهارده؟',yes:'نعم',no:'لا',snd2:'ابعت سكرين شوت درجة المحاضرة مع تاريخ اليوم',
+retry:'التاريخ غير تاريخ اليوم، حاول مرة أخرى',done:'أحسنت! تم تسجيل المادة',keep:'كمل مذاكرة',
+pen:'قلم',hl:'هايلايتر',eras:'ممحاة',line:'خط',rect:'مستطيل',circ:'دائرة',tri:'مثلث',ruler:'مسطرة',clr:'مسح',tg:'إخفاء/إظهار الأدوات',
+sd:'جدول أيام الأسبوع (قابل للتعديل)',tin:'اكتب كلمة أو جملة',tbtn:'ترجم',tn:'الترجمة الكاملة تحتاج ربط خدمة ترجمة. حالياً قاموس مصطلحات مدرسية.',nf:'غير موجودة في القاموس',pick:'اختر صورة'},
+en:{app:'Nizam Waqak with AI Moaz',lt:'Sign in',ls:'Enter your phone number only',snd:'Send login request',lw:'A Telegram notification was sent. Tap "Approve" there',sim:'Simulate Telegram approval',
+demo:'Demo: real Telegram approval needs a bot and server',home:'Home',pomo:'Pomodoro',cards:'Flashcards',quiz:'Quick quiz',ach:'Achievements',priv:'Privacy',notes:'Summarize your notes',sched:'Schedule',tr:'Translate',lang:'عربي',out:'Log out',
+ar:'Arabic',en:'English',hi:'History',sc:'Science',ma:'Math',ph:'Philosophy',
+days:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+wel:['Welcome!','Nizam Waqak','AI Moaz','Focus','Start your day'],
+gt:'Send a screenshot of your exam grade',gmin:'Minimum to enter: 85%',up:'Choose image',
+lock:'Retake the exam. Remaining',fail:'Grade below 85%. Retake the exam; the app reopens after 15 minutes',
+na:'This exam is not available today',ok:'Grade accepted, welcome',
+ask:'Enter the screenshot details (temporary until image reading is connected)',subj:'Subject',grade:'Grade %',date:'Date',go:'Confirm',
+prog:'My progress',today:'Today',week:'Week',none:'No subject today',
+fin:'Did you finish today\'s work?',yes:'Yes',no:'No',snd2:'Send a screenshot of the lecture grade with today\'s date',
+retry:'Date is not today. Try again',done:'Well done! Subject recorded',keep:'Keep studying',
+pen:'Pen',hl:'Highlighter',eras:'Eraser',line:'Line',rect:'Rectangle',circ:'Circle',tri:'Triangle',ruler:'Ruler',clr:'Clear',tg:'Hide/Show tools',
+sd:'Weekly schedule (editable)',tin:'Type a word or sentence',tbtn:'Translate',tn:'Full translation needs a translation service. For now: a school-terms dictionary.',nf:'Not in dictionary',pick:'Pick image'}};
+const DICT={'كتاب':'book','مذاكرة':'study','امتحان':'exam','رياضيات':'math','علوم':'science','تاريخ':'history','فلسفة':'philosophy','عربي':'Arabic','انجليزي':'English','درجة':'grade','مذكرة':'notes','book':'كتاب','study':'مذاكرة','exam':'امتحان','math':'رياضيات','science':'علوم','history':'تاريخ','philosophy':'فلسفة','grade':'درجة','notes':'مذكرة','school':'مدرسة','teacher':'معلم','مدرسة':'school','معلم':'teacher'};
+let L=ld('lang','ar'),view='home',tool='pen',color='#e11d2e',showT=true;
+function ld(k,d){try{const v=localStorage.getItem('nw_'+k);return v?JSON.parse(v):d}catch(e){return d}}
+function sv(k,v){try{localStorage.setItem('nw_'+k,JSON.stringify(v))}catch(e){}}
+const T=k=>D[L][k]??k, $=s=>document.querySelector(s);
+let sched=ld('sched',[ 'ar','en','hi','sc','ma','ph','ar']); // by weekday index 0=Sun
+let done=ld('done',{});
+const todayKey=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+const todaySub=()=>sched[new Date().getDay()];
+// bubbles on every click
+document.addEventListener('click',e=>{const el=e.target.closest('button,select,input,g,.nav');if(!el)return;
+ const b=document.createElement('div');b.className='bub';b.textContent=(el.getAttribute('data-b')||el.innerText||el.getAttribute('placeholder')||'•').trim().slice(0,24)||'•';
+ b.style.left=Math.min(e.clientX,innerWidth-110)+'px';b.style.top=(e.clientY-30)+'px';document.body.appendChild(b);setTimeout(()=>b.remove(),1100)});
+function dlg(html,acts){const o=document.createElement('div');o.id='ov';o.innerHTML='<div class="dlg">'+html+'<div id="da"></div></div>';
+ (acts||[]).forEach(a=>{const b=document.createElement('button');b.textContent=a[0];if(a[2])b.className='g';b.onclick=()=>{o.remove();a[1]&&a[1]()};o.querySelector('#da').appendChild(b);b.style.margin='3px'});
+ document.body.appendChild(o);return o}
+function welcome(){const w=$('#wel');w.innerHTML='';D[L].wel.forEach((t,i)=>{for(let j=0;j<3;j++){const b=document.createElement('div');b.className='wb';const s=70+Math.random()*60;
+ b.style.cssText+=`width:${s}px;height:${s}px;left:${20+Math.random()*60}%;top:${30+Math.random()*40}%;--x:${(Math.random()-.5)*300}px;--y:${-100-Math.random()*250}px;animation-delay:${i*.25+j*.1}s;opacity:0`;
+ b.textContent=j==0?t:'';w.appendChild(b)}});setTimeout(()=>w.innerHTML='',4200)}
+function applyLang(){document.documentElement.lang=L;document.documentElement.dir=L=='ar'?'rtl':'ltr';
+ $('#l_t').textContent=T('lt');$('#l_s').textContent=T('ls');$('#send').textContent=T('snd');$('#l_w').textContent=T('lw');$('#sim').textContent=T('sim');$('#demo').textContent=T('demo');
+ $('#lg0').textContent=T('lang');$('#brand').textContent=T('app');$('#lang').textContent=T('lang');$('#out').textContent=T('out');
+ document.querySelectorAll('.nav').forEach(n=>{n.textContent=T(n.dataset.v);n.classList.toggle('on',n.dataset.v==view)});
+ $('#side').style.direction=$('#main').style.direction=L=='ar'?'rtl':'ltr'}
+function setLang(){L=L=='ar'?'en':'ar';sv('lang',L);applyLang();if(!$('#app').classList.contains('hide'))render();if(!$('#gate').classList.contains('hide'))gate()}
+$('#lang').onclick=$('#lg0').onclick=setLang;
+// login
+$('#send').onclick=()=>{const p=$('#ph').value.trim();if(!/^\+?\d{8,15}$/.test(p)){dlg('<p>'+(L=='ar'?'رقم غير صحيح':'Invalid number')+'</p>',[['OK']]);return}
+ sv('phone',p);$('#wait').classList.remove('hide')};
+$('#sim').onclick=()=>{$('#login').classList.add('hide');const n=ld('visits',0);sv('visits',n+1);
+ if(n==0||!GATE_ON){enter(n==0)}else gate()};
+$('#out').onclick=()=>{$('#app').classList.add('hide');$('#login').classList.remove('hide');$('#wait').classList.add('hide')};
+function enter(first){$('#gate').classList.add('hide');$('#app').classList.remove('hide');applyLang();render();if(first)welcome();else if(GATE_ON)dlg('<h2 style="color:var(--r)">'+T('ok')+'</h2>',[['OK']])}
+// gate (exam screenshot)
+let tick;
+function gate(){clearInterval(tick);const g=$('#gate');g.classList.remove('hide');const box=$('#gbox');
+ const lk=ld('lock',0);
+ if(lk>Date.now()){const f=()=>{const s=Math.max(0,Math.ceil((lk-Date.now())/1000));box.innerHTML='<h2>'+T('lock')+'</h2><h1 style="color:var(--r)">'+String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')+'</h1><button class="g" id="lg1">'+T('lang')+'</button>';$('#lg1').onclick=setLang;if(s<=0){clearInterval(tick);gate()}};f();tick=setInterval(f,1000);return}
+ box.innerHTML='<h2>'+T('gt')+'</h2><p style="color:var(--m)">'+T('gmin')+'</p><input type="file" id="gf" accept="image/*"><img id="gp" style="max-width:100%;border-radius:14px" class="hide"><div id="gfm" class="hide"></div><button class="g" id="lg1">'+T('lang')+'</button>';
+ $('#lg1').onclick=setLang;
+ $('#gf').onchange=e=>{const f=e.target.files[0];if(!f)return;$('#gp').src=URL.createObjectURL(f);$('#gp').classList.remove('hide');
+  const fm=$('#gfm');fm.classList.remove('hide');
+  fm.innerHTML='<p style="color:var(--m)">'+T('ask')+'</p><select id="gs">'+SUB.map(s=>'<option value="'+s+'">'+T(s)+'</option>').join('')+'</select><br><br><input id="gg" type="number" min="0" max="100" placeholder="'+T('grade')+'"><br><br><button id="gok">'+T('go')+'</button>';
+  $('#gok').onclick=()=>{const gr=parseFloat($('#gg').value);if(isNaN(gr))return;
+   if($('#gs').value!=todaySub()){dlg('<h3>'+T('na')+'</h3>',[['OK']]);return}
+   if(gr<85){sv('lock',Date.now()+15*60000);dlg('<h3>'+T('fail')+'</h3>',[['OK',gate]]);return}
+   enter(false)}}}
+// views
+function pct(s,days){let c=0;days.forEach(d=>{if(done[s+'|'+d])c++});return c}
+function weekDates(){const r=[],n=new Date();for(let i=0;i<7;i++){const d=new Date(n);d.setDate(n.getDate()-n.getDay()+i);r.push(d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'))}return r}
+function render(){applyLang();const m=$('#main');
+ if(view=='home'){const wd=weekDates();m.innerHTML='<h2 style="color:var(--r)">'+T('prog')+'</h2><div class="card">🔥 '+X('أيام متواصلة','Day streak')+': '+ST().s+' · ⭐ '+ST().p+'</div>'+SUB.map(s=>{const t=done[s+'|'+todayKey()]?100:0;const w=Math.round(pct(s,wd)/Math.max(1,sched.filter(x=>x==s).length)*100);
+  return '<div class="card"><b>'+T(s)+'</b><br><small>'+T('today')+' '+t+'%</small><div class="bar"><i style="width:'+t+'%"></i></div><small>'+T('week')+' '+Math.min(100,w)+'%</small><div class="bar"><i style="width:'+Math.min(100,w)+'%"></i></div></div>'}).join('')}
+ else if(view=='notes'){m.innerHTML='<div id="tools"><button class="g" id="tg">'+T('tg')+'</button><span id="tl" class="'+(showT?'':'hide')+'" style="display:contents"></span></div><canvas id="cv"></canvas>';
+  const tl=$('#tl');if(!showT)tl.style.display='none';
+  const bt=[['pen','pen'],['hl','hl'],['eras','eras'],['line','line'],['rect','rect'],['circ','circ'],['tri','tri'],['ruler','ruler']];
+  tl.innerHTML=bt.map(b=>'<button class="g '+(tool==b[0]?'on':'')+'" data-t="'+b[0]+'">'+T(b[1])+'</button>').join('')+['#e11d2e','#000000','#2563eb','#16a34a','#eab308','#a855f7','#f97316','#ec4899'].map(c=>'<button class="sw" data-c="'+c+'" style="background:'+c+'"></button>').join('')+'<button id="cl">'+T('clr')+'</button>';
+  $('#tg').onclick=()=>{showT=!showT;tl.style.display=showT?'contents':'none'};
+  tl.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{tool=b.dataset.t;tl.querySelectorAll('[data-t]').forEach(x=>x.classList.toggle('on',x==b))});
+  tl.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>color=b.dataset.c);
+  initCanvas();$('#cl').onclick=()=>{ctx.clearRect(0,0,cv.width,cv.height);snap=null};
+  m.insertAdjacentHTML('beforeend','<div class="card" style="margin-top:12px"><small style="color:var(--m)">'+T('sched')+' ↓ </small>'+schedHTML()+'</div>');bindSched()}
+ else if(view=='sched'){m.innerHTML='<h2 style="color:var(--r)">'+T('sched')+'</h2>'+mapHTML()+'<div class="card">'+schedHTML()+'</div>';bindSched();
+  m.querySelectorAll('#map g').forEach(g=>g.onclick=()=>subjDlg(g.dataset.s))}
+ else if(view!='tr')extra(m);
+ else{m.innerHTML='<h2 style="color:var(--r)">'+T('tr')+'</h2><div class="card"><input id="tin" placeholder="'+T('tin')+'"><br><br><button id="tgo">'+T('tbtn')+'</button><p id="tout"></p><small style="color:var(--m)">'+T('tn')+'</small></div>';
+  $('#tgo').onclick=()=>{const w=$('#tin').value.trim().toLowerCase();$('#tout').textContent=DICT[w]||T('nf')}}}
+function schedHTML(){return '<b>'+T('sd')+'</b><table>'+D[L].days.map((d,i)=>'<tr><td>'+d+'</td><td><select data-d="'+i+'">'+SUB.map(s=>'<option value="'+s+'"'+(sched[i]==s?' selected':'')+'>'+T(s)+'</option>').join('')+'</select></td></tr>').join('')+'</table>'}
+function bindSched(){document.querySelectorAll('select[data-d]').forEach(s=>s.onchange=()=>{sched[+s.dataset.d]=s.value;sv('sched',sched)})}
+function mapHTML(){const cx=260,cy=190,R=135;let h='<svg id="map" viewBox="0 0 520 380"><g>';
+ SUB.forEach((s,i)=>{const a=i/6*Math.PI*2-Math.PI/2,x=cx+R*1.15*Math.cos(a),y=cy+R*Math.sin(a);h+='<line x1="'+cx+'" y1="'+cy+'" x2="'+x+'" y2="'+y+'" stroke="#7a0f18" stroke-width="3"/>'});
+ h+='</g><circle cx="'+cx+'" cy="'+cy+'" r="46" fill="#e11d2e"/><text x="'+cx+'" y="'+(cy+5)+'" fill="#fff" text-anchor="middle" font-size="14">'+T('sched')+'</text>';
+ SUB.forEach((s,i)=>{const a=i/6*Math.PI*2-Math.PI/2,x=cx+R*1.15*Math.cos(a),y=cy+R*Math.sin(a),ok=done[s+'|'+todayKey()];
+  h+='<g data-s="'+s+'" data-b="'+T(s)+'"><ellipse cx="'+x+'" cy="'+y+'" rx="52" ry="30" fill="'+(ok?'#16a34a':'#16161a')+'" stroke="#e11d2e" stroke-width="3"/><text x="'+x+'" y="'+(y+5)+'" fill="#fff" text-anchor="middle" font-size="15">'+T(s)+'</text></g>'});
+ return h+'</svg>'}
+function subjDlg(s){dlg('<h3>'+T(s)+'</h3><p>'+T('fin')+'</p>',[[T('yes'),()=>proof(s)],[T('no'),()=>dlg('<p>'+T('keep')+'</p>',[['OK']]),1]])}
+function proof(s){const o=dlg('<p>'+T('snd2')+'</p><input type="file" accept="image/*" id="pf"><div id="pm" class="hide"><p style="color:var(--m);font-size:12px">'+T('ask')+'</p><input type="date" id="pd"><br><br><button id="pk">'+T('go')+'</button></div>',[[T('no'),null,1]]);
+ o.querySelector('#pf').onchange=e=>{if(e.target.files[0])o.querySelector('#pm').classList.remove('hide')};
+ o.querySelector('#pk').onclick=()=>{if(o.querySelector('#pd').value!=todayKey()){o.remove();dlg('<p>'+T('retry')+'</p>',[['OK']]);return}
+  done[s+'|'+todayKey()]=1;sv('done',done);award(20);o.remove();dlg('<h3>'+T('done')+'</h3>',[['OK',render]])}}
+// canvas
+const X=(a,e)=>L=='ar'?a:e,H=k=>'<h2 style="color:var(--r)">'+T(k)+'</h2>',esc=s=>String(s).replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';'),dk=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+let pt;const GATE_ON=false; // حماية الامتحان موقوفة مؤقتاً: غيّرها لـ true لتشغيلها
+function ST(){return ld('st',{p:0,s:0,l:''})}
+function award(n){const s=ST(),k=dk(new Date()),y=new Date();y.setDate(y.getDate()-1);s.p+=n;if(s.l!=k){s.s=s.l==dk(y)?s.s+1:1;s.l=k}sv('st',s)}
+function extra(m){clearInterval(pt);const cs=ld('cards',[]);
+ if(view=='pomo'){let s=1500,run=false;m.innerHTML=H('pomo')+'<div class="card" style="text-align:center"><h1 id="pt" style="font-size:54px;color:var(--r)">25:00</h1><button id="pb">▶</button> <button class="g" id="pr">↺</button></div>';
+  const sh=()=>{const e=$('#pt');if(e)e.textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')};
+  $('#pb').onclick=()=>{run=!run;$('#pb').textContent=run?'⏸':'▶'};$('#pr').onclick=()=>{s=1500;sh()};
+  pt=setInterval(()=>{if(run&&--s<=0){s=1500;run=false;const b=$('#pb');if(b)b.textContent='▶';award(10);dlg('<h3>'+X('أحسنت! +10 نقاط','Great! +10 points')+'</h3>',[['OK']])}sh()},1000)}
+ else if(view=='cards'){m.innerHTML=H('cards')+'<div class="card"><input id="cf" placeholder="'+X('السؤال','Question')+'"><br><br><input id="cb" placeholder="'+X('الإجابة','Answer')+'"><br><br><button id="ca">+</button></div><div id="cl2"></div>';
+  const rl=()=>{const l=$('#cl2');l.innerHTML=cs.map((c,i)=>'<div class="card" data-i="'+i+'" style="cursor:pointer"><b>'+esc(c[0])+'</b><div class="hide" style="color:var(--r);margin-top:6px">'+esc(c[1])+'</div><button class="g" data-x="'+i+'">✕</button></div>').join('');
+   l.querySelectorAll('.card').forEach(c=>c.onclick=()=>c.children[1].classList.toggle('hide'));
+   l.querySelectorAll('[data-x]').forEach(b=>b.onclick=e=>{e.stopPropagation();cs.splice(+b.dataset.x,1);sv('cards',cs);rl()})};rl();
+  $('#ca').onclick=()=>{const q=$('#cf').value.trim(),a=$('#cb').value.trim();if(!q||!a)return;cs.push([q,a]);sv('cards',cs);$('#cf').value=$('#cb').value='';rl()}}
+ else if(view=='quiz'){if(cs.length<3){m.innerHTML=H('quiz')+'<div class="card">'+X('أضف 3 بطاقات على الأقل في بطاقات المراجعة','Add at least 3 flashcards first')+'</div>';return}
+  const sf=a=>a.sort(()=>Math.random()-.5),c=cs[Math.floor(Math.random()*cs.length)],o=sf([c[1],...sf(cs.filter(x=>x!=c)).slice(0,2).map(x=>x[1])]);
+  m.innerHTML=H('quiz')+'<div class="card"><h3>'+esc(c[0])+'</h3>'+o.map((a,i)=>'<button class="g" data-a="'+i+'" style="display:block;width:100%;margin:6px 0">'+esc(a)+'</button>').join('')+'</div>';
+  m.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{const ok=o[+b.dataset.a]==c[1];if(ok)award(5);dlg('<h3>'+(ok?X('صح! +5 نقاط','Correct! +5'):X('غلط. الإجابة: ','Wrong. Answer: ')+esc(c[1]))+'</h3>',[['OK',render]])})}
+ else if(view=='ach'){const s=ST();let inv=ld('inv',null);if(!inv){inv='NW-'+Math.random().toString(36).slice(2,8).toUpperCase();sv('inv',inv)}
+  const bd=[[s.s>=3,'🔥',X('3 أيام متواصلة','3-day streak')],[s.p>=50,'⭐',X('50 نقطة','50 points')],[s.p>=200,'🏆',X('200 نقطة','200 points')],[Object.keys(done).length>=6,'📚',X('6 مواد منجزة','6 subjects done')]];
+  m.innerHTML=H('ach')+'<div class="card">🔥 '+s.s+' · ⭐ '+s.p+'</div><div class="card">'+bd.map(b=>'<div style="opacity:'+(b[0]?1:.3)+'">'+b[1]+' '+b[2]+'</div>').join('')+'</div><div class="card">'+X('كود الدعوة','Invite code')+': <b style="color:var(--r)">'+inv+'</b><br><small style="color:var(--m)">'+X('نقاط الدعوة ولوحة الترتيب ولولي الأمر تحتاج سيرفر','Invite rewards, leaderboard and parent view need a server')+'</small></div>'}
+ else{m.innerHTML=H('priv')+'<div class="card" style="line-height:1.9">'+X('نجمع رقم الهاتف وصور الدرجات لتشغيل البرنامج فقط. لا نبيع بياناتك ولا نشاركها. يمكنك طلب حذف بياناتك في أي وقت. (نص مبدئي يراجعه مختص قبل النشر)','We collect your phone number and grade screenshots only to run the app. We never sell or share your data. You may request deletion anytime. (Draft text: have it reviewed before publishing)')+'</div>'}}
+let cv,ctx,snap=null;
+function initCanvas(){cv=$('#cv');const r=cv.getBoundingClientRect();cv.width=r.width*devicePixelRatio;cv.height=r.height*devicePixelRatio;ctx=cv.getContext('2d');ctx.scale(devicePixelRatio,devicePixelRatio);ctx.lineCap='round';
+ let dr=false,sx,sy,base;const pos=e=>{const b=cv.getBoundingClientRect();return[e.clientX-b.left,e.clientY-b.top]};
+ cv.onpointerdown=e=>{dr=true;[sx,sy]=pos(e);base=ctx.getImageData(0,0,cv.width,cv.height);ctx.beginPath();ctx.moveTo(sx,sy)};
+ cv.onpointermove=e=>{if(!dr)return;const[x,y]=pos(e);
+  if(tool=='pen'||tool=='hl'||tool=='eras'){ctx.globalCompositeOperation=tool=='eras'?'destination-out':'source-over';ctx.globalAlpha=tool=='hl'?.35:1;ctx.strokeStyle=color;ctx.lineWidth=tool=='hl'?18:tool=='eras'?22:3;ctx.lineTo(x,y);ctx.stroke()}
+  else{ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;ctx.putImageData(base,0,0);ctx.strokeStyle=color;ctx.lineWidth=3;ctx.beginPath();
+   if(tool=='line'||tool=='ruler'){ctx.moveTo(sx,sy);ctx.lineTo(x,y);ctx.stroke();if(tool=='ruler'){ctx.fillStyle=color;ctx.font='13px Tahoma';ctx.fillText((Math.hypot(x-sx,y-sy)/37.8).toFixed(1)+' cm',(sx+x)/2+6,(sy+y)/2-6)}}
+   else if(tool=='rect')ctx.strokeRect(sx,sy,x-sx,y-sy);
+   else if(tool=='circ'){ctx.arc(sx,sy,Math.hypot(x-sx,y-sy),0,7);ctx.stroke()}
+   else if(tool=='tri'){ctx.moveTo((sx+x)/2,sy);ctx.lineTo(x,y);ctx.lineTo(sx,y);ctx.closePath();ctx.stroke()}}};
+ cv.onpointerup=cv.onpointerleave=()=>{dr=false;ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over'}}
+document.querySelectorAll('.nav').forEach(n=>n.onclick=()=>{view=n.dataset.v;render()});
+applyLang();
+</script></body></html>
